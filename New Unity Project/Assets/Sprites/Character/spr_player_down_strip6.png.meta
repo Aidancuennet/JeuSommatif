@@ -20,6 +20,24 @@ TextureImporter:
   - first:
       213: -5059086837085091579
     second: spr_player_down_strip6_5
+  - first:
+      213: 3844793137183476429
+    second: spr_player_down_strip6_0
+  - first:
+      213: -6161037519387826461
+    second: spr_player_down_strip6_1
+  - first:
+      213: 8537006349565867933
+    second: spr_player_down_strip6_2
+  - first:
+      213: -6240406072954912649
+    second: spr_player_down_strip6_3
+  - first:
+      213: 7178835179939057109
+    second: spr_player_down_strip6_4
+  - first:
+      213: -5060554433873428093
+    second: spr_player_down_strip6_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,19 +128,19 @@ TextureImporter:
       name: spr_player_down_strip6_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 14
-        height: 21
+        x: 2
+        y: 2
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 568e05d952ed7abd0800000000000000
-      internalID: -2618880405158172571
+      spriteID: dca4ea8dcf27b5530800000000000000
+      internalID: 3844793137183476429
       vertices: []
       indices: 
       edges: []
@@ -131,19 +149,19 @@ TextureImporter:
       name: spr_player_down_strip6_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 14
-        height: 21
+        x: 16
+        y: 4
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e7916ff06548a690800000000000000
-      internalID: -7590740889029208091
+      spriteID: 3e6e809c4099f7aa0800000000000000
+      internalID: -6161037519387826461
       vertices: []
       indices: 
       edges: []
@@ -152,19 +170,19 @@ TextureImporter:
       name: spr_player_down_strip6_2
       rect:
         serializedVersion: 2
-        x: 28
-        y: 0
-        width: 14
-        height: 21
+        x: 30
+        y: 3
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c0085d4967d31a0800000000000000
-      internalID: -6828171078414627777
+      spriteID: d97b02f3b0a897670800000000000000
+      internalID: 8537006349565867933
       vertices: []
       indices: 
       edges: []
@@ -173,19 +191,19 @@ TextureImporter:
       name: spr_player_down_strip6_3
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
-        width: 14
-        height: 21
+        x: 44
+        y: 2
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 498f1dcfc673907d0800000000000000
-      internalID: -2951767139527034732
+      spriteID: 770055f5dbf9569a0800000000000000
+      internalID: -6240406072954912649
       vertices: []
       indices: 
       edges: []
@@ -194,19 +212,19 @@ TextureImporter:
       name: spr_player_down_strip6_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 0
-        width: 14
-        height: 21
+        x: 58
+        y: 4
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 784c04006ab756f90800000000000000
-      internalID: -6961021696132201337
+      spriteID: 5dd4851af8850a360800000000000000
+      internalID: 7178835179939057109
       vertices: []
       indices: 
       edges: []
@@ -215,19 +233,19 @@ TextureImporter:
       name: spr_player_down_strip6_5
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 14
-        height: 21
+        x: 72
+        y: 3
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50940bb63538ac9b0800000000000000
-      internalID: -5059086837085091579
+      spriteID: 381427aed8c45c9b0800000000000000
+      internalID: -5060554433873428093
       vertices: []
       indices: 
       edges: []
