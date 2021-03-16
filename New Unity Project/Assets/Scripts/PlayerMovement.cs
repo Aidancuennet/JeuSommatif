@@ -6,11 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]  float speed;
-    [SerializeField] private Animator _animator;
     private Vector2 _direction;
     private Vector2 _targetPos;
+    private Animator _animator;
     private const float DashRange = 1.4f;
-    public Animator Animator { get; private set; }
     private enum Facing
     {
         UP,
@@ -20,25 +19,15 @@ public class PlayerMovement : MonoBehaviour
     };
 
     private Facing _facingDir = Facing.DOWN;
-    private static float x;
-    private static float y;
-    private static float sqrMagnitude;
-
     
-
     void Start()
     {
-
+        _animator = GetComponent<Animator>();
     }
     void Update()
     {
-        PlayerMovement.x = Input.GetAxisRaw("Horizontal");
-        PlayerMovement.y = Input.GetAxisRaw("Vertical");
-        Animator.SetFloat("Horizontal", PlayerMovement.x);
-        Animator.SetFloat("Vertical", PlayerMovement.y);
-        Animator.SetFloat("Speed", PlayerMovement.sqrMagnitude);
         TakeInput();
-            Move();
+        Move();
     }
 
     private void Move() //Moves the player
@@ -46,12 +35,11 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(_direction * (speed * Time.deltaTime));
         if (_direction.x != 0 || _direction.y != 0)                          // PUT DEADZONE HERE
         {
-            
-            
+              SetAnimatorMove(_direction);
         }
         else
         {
-            
+            _animator.SetLayerWeight(1,0);
         }
     }
 
@@ -81,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
         {
+          
 
             _targetPos = Vector2.zero;
             if (_facingDir == Facing.UP)
@@ -103,5 +92,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void SetAnimatorMove(Vector2 _direction)
+    {
+        _animator.SetLayerWeight(1,1);
+        _animator.SetFloat("xDir", _direction.x);
+        _animator.SetFloat("yDir", _direction.y);
+
+    }
     
 }

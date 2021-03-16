@@ -3482,7 +3482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  _animator: {fileID: 1851536122}
 --- !u!212 &1851536120
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3558,7 +3557,7 @@ Animator:
   m_GameObject: {fileID: 1851536118}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 30459874906d517458657f54c72498c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: d64a4843958636b43aeab8cfac6284f2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
