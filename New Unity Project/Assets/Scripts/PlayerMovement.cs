@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _targetPos;
     private Animator _animator;
     private const float DashRange = 1.4f;
+    public GameObject dashEffect;
+    
+    
     private enum Facing
     {
         UP,
@@ -19,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     };
 
     private Facing _facingDir = Facing.DOWN;
-    
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -48,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         _direction = Vector2.zero;
         if (Input.GetKey(KeyCode.W))
         {
-          _direction += Vector2.up;
+            _direction += Vector2.up;
           _facingDir = Facing.UP;
         }
         if (Input.GetKey(KeyCode.S))
@@ -69,23 +72,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
         {
-          
 
             _targetPos = Vector2.zero;
             if (_facingDir == Facing.UP)
             {
+                
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
                 _targetPos.y = 1;
             }
             if (_facingDir == Facing.DOWN)
             {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
                 _targetPos.y = -1;
             }
             if (_facingDir == Facing.LEFT)
             {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
                 _targetPos.x = -1;
             }
             if (_facingDir == Facing.RIGHT)
             {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
                 _targetPos.x = 1;
             }
             transform.Translate(_targetPos* DashRange);
