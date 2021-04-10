@@ -6,12 +6,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]  float speed;
+    [SerializeField] private int coolDownTime;
+    private float _nextDashTime = 0;
     private Vector2 _direction;
     private Vector2 _targetPos;
     private Animator _animator;
-    private const float DashRange = 1.4f;
+    private const float DashRange = 1.5f;
     public GameObject dashEffect;
-    
     
     private enum Facing
     {
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        //_shake = 
         _animator = GetComponent<Animator>();
     }
     void Update()
@@ -70,32 +72,72 @@ public class PlayerMovement : MonoBehaviour
             _facingDir = Facing.RIGHT;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
+        if (Time.time > _nextDashTime)
         {
 
-            _targetPos = Vector2.zero;
-            if (_facingDir == Facing.UP)
+            if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
             {
-                
-                Instantiate(dashEffect, transform.position, Quaternion.identity);
-                _targetPos.y = 1;
+                _nextDashTime = Time.time + coolDownTime;
+
+                _targetPos = Vector2.zero;
+                if (_facingDir == Facing.UP)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = 1;
+                }
+
+                if (_facingDir == Facing.DOWN)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = -1;
+                }
+
+                if (_facingDir == Facing.LEFT)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = -1;
+                }
+
+                if (_facingDir == Facing.RIGHT)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = 1;
+                }
+
+                if (_direction.x == 1 && _direction.y == 1)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = 1;
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = 1;
+                }
+
+                if (_direction.x == 1 && _direction.y == -1)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = -1;
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = 1;
+                }
+
+                if (_direction.x == -1 && _direction.y == 1)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = 1;
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = -1;
+                }
+
+                if (_direction.x == -1 && _direction.y == -1)
+                {
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.y = -1;
+                    Instantiate(dashEffect, transform.position, Quaternion.identity);
+                    _targetPos.x = -1;
+                }
+
+                transform.Translate(_targetPos * DashRange);
             }
-            if (_facingDir == Facing.DOWN)
-            {
-                Instantiate(dashEffect, transform.position, Quaternion.identity);
-                _targetPos.y = -1;
-            }
-            if (_facingDir == Facing.LEFT)
-            {
-                Instantiate(dashEffect, transform.position, Quaternion.identity);
-                _targetPos.x = -1;
-            }
-            if (_facingDir == Facing.RIGHT)
-            {
-                Instantiate(dashEffect, transform.position, Quaternion.identity);
-                _targetPos.x = 1;
-            }
-            transform.Translate(_targetPos* DashRange);
         }
     }
 
@@ -104,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetLayerWeight(1,1);
         _animator.SetFloat("xDir", _direction.x);
         _animator.SetFloat("yDir", _direction.y);
-
     }
     
 }
