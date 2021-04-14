@@ -763,6 +763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1990356585735364017, guid: c48c0d78d75e73148ab43ade0765433f, type: 3}
+      propertyPath: coolDownTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7038145796946328828, guid: c48c0d78d75e73148ab43ade0765433f, type: 3}
       propertyPath: m_Radius
       value: 0.26051027
