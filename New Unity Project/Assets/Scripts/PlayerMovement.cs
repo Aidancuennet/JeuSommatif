@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _direction;
     private Vector2 _targetPos;
     private Animator _animator;
-    private const float DashRange = 1.5f;
+    private const float DashRange = 2.8f;
     public GameObject dashEffect;
     
     private enum Facing
