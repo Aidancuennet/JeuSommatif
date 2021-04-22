@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]  float speed;
-    [SerializeField] private int coolDownTime;
-    private float _nextDashTime = 0;
     private Vector2 _direction;
     private Vector2 _targetPos;
     private Animator _animator;
@@ -70,14 +68,9 @@ public class PlayerMovement : MonoBehaviour
             _direction += Vector2.right; 
             _facingDir = Facing.RIGHT;
         }
-
-        if (Time.time > _nextDashTime)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
+        
+        if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
             {
-                _nextDashTime = Time.time + coolDownTime;
-
                 _targetPos = Vector2.zero;
                 if (_facingDir == Facing.UP)
                 {
@@ -137,7 +130,6 @@ public class PlayerMovement : MonoBehaviour
 
                 transform.Translate(_targetPos * DashRange);
             }
-        }
     }
 
     private void SetAnimatorMove(Vector2 _direction)
