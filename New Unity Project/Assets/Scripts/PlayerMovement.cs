@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]  float speed;
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private const float DashRange = 2f;
     [SerializeField] GameObject dashEffect;
     
-    private enum Facing
+    private enum State
     {
         UP,
         DOWN,
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         RIGHT
     };
 
-    private Facing _facingDir = Facing.DOWN;
+    private State _stateDir = State.DOWN;
 
     void Start()
     {
@@ -51,46 +52,47 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             _direction += Vector2.up;
-          _facingDir = Facing.UP;
+          _stateDir = State.UP;
         }
         if (Input.GetKey(KeyCode.S))
         {
             _direction += Vector2.down; 
-            _facingDir = Facing.DOWN;
+            _stateDir = State.DOWN;
         }
         if (Input.GetKey(KeyCode.A))
         {
             _direction += Vector2.left; 
-            _facingDir = Facing.LEFT;
+            _stateDir = State.LEFT;
         }
         if (Input.GetKey(KeyCode.D))
         {
             _direction += Vector2.right; 
-            _facingDir = Facing.RIGHT;
+            _stateDir = State.RIGHT;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
+
+            if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
             {
                 _targetPos = Vector2.zero;
-                if (_facingDir == Facing.UP)
+                if (_stateDir == State.UP)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
                     _targetPos.y = 1;
                 }
 
-                if (_facingDir == Facing.DOWN)
+                if (_stateDir == State.DOWN)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
                     _targetPos.y = -1;
                 }
 
-                if (_facingDir == Facing.LEFT)
+                if (_stateDir == State.LEFT)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
                     _targetPos.x = -1;
                 }
 
-                if (_facingDir == Facing.RIGHT)
+                if (_stateDir == State.RIGHT)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
                     _targetPos.x = 1;
@@ -130,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
                 transform.Translate(_targetPos * DashRange);
             }
+        
     }
 
     private void SetAnimatorMove(Vector2 _direction)

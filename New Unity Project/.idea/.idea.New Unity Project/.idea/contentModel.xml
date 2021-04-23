@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Camera.cs" t="Include" />
+          <e p="CheckDash.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="Shake.cs" t="Include" />
         </e>

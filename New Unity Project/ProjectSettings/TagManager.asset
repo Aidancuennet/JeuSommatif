@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shake
+  - Ground
+  - Void
   layers:
   - Default
   - TransparentFX
