@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     
     private enum State
     {
+        DASHING,
         UP,
         DOWN,
         LEFT,
@@ -74,6 +75,17 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
             {
                 _targetPos = Vector2.zero;
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    _stateDir = State.DASHING;
+                }
+                else
+                {
+                    _stateDir = State.DOWN;
+                }
+                {
+                    
+                }
                 if (_stateDir == State.UP)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
