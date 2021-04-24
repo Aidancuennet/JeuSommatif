@@ -75,17 +75,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
             {
                 _targetPos = Vector2.zero;
-                if(Input.GetKeyDown(KeyCode.Space))
-                {
-                    _stateDir = State.DASHING;
-                }
-                else
-                {
-                    _stateDir = State.DOWN;
-                }
-                {
-                    
-                }
                 if (_stateDir == State.UP)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
@@ -113,36 +102,37 @@ public class PlayerMovement : MonoBehaviour
                 if (_direction.x == 1 && _direction.y == 1)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = 1;
+                    _targetPos.y = 1/Mathf.Sqrt(2);
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = 1;
+                    _targetPos.x = 1/Mathf.Sqrt(2);
                 }
 
                 if (_direction.x == 1 && _direction.y == -1)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = -1;
+                    _targetPos.y = -1/Mathf.Sqrt(2);
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = 1;
+                    _targetPos.x = 1/Mathf.Sqrt(2);
                 }
 
                 if (_direction.x == -1 && _direction.y == 1)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = 1;
+                    _targetPos.y = 1/Mathf.Sqrt(2);
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = -1;
+                    _targetPos.x = -1/Mathf.Sqrt(2);
                 }
 
                 if (_direction.x == -1 && _direction.y == -1)
                 {
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = -1;
+                    _targetPos.y = -1/Mathf.Sqrt(2);
                     Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = -1;
+                    _targetPos.x = -1/Mathf.Sqrt(2);
                 }
-
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dash");
                 transform.Translate(_targetPos * DashRange);
+                _stateDir = State.DASHING;
             }
         
     }
