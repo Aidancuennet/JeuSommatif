@@ -13,16 +13,22 @@ public class PlayerMovement : MonoBehaviour
     private const float DashRange = 2f;
     [SerializeField] GameObject dashEffect;
     
-    private enum State
+    public enum State
     {
-        DASHING,
         UP,
         DOWN,
         LEFT,
         RIGHT
     };
 
-    private State _stateDir = State.DOWN;
+    private State _stateDir;
+
+    public enum Action
+    {
+        DASHING,
+    }
+
+    public static Action action;
 
     void Start()
     {
@@ -132,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dash");
                 transform.Translate(_targetPos * DashRange);
-                _stateDir = State.DASHING;
+                action = Action.DASHING;
             }
         
     }

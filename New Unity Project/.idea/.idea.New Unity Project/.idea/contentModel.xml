@@ -125,7 +125,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Breaking.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
+          <e p="CameraControl.cs" t="Include" />
+          <e p="ChangingSprites.cs" t="Include" />
           <e p="CheckDash.cs" t="Include" />
           <e p="MusicManager.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
