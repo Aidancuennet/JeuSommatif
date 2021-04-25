@@ -150,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650c33fbe8b8a224382d4cee02e10ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shakingObj: {fileID: 0}
+  duration: 0
 --- !u!114 &1116701195
 MonoBehaviour:
   m_ObjectHideFlags: 0

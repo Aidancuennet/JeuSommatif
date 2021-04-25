@@ -15,17 +15,19 @@ public class Breaking : MonoBehaviour
         _change = GetComponent<ChangingSprites>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
     }
-    
+
     void OnTriggerEnter2D(Collider2D other) //disables the colliders
     {
-        if (other.CompareTag("Player") && PlayerMovement.action == PlayerMovement.Action.DASHING && Input.GetKey(KeyCode.Space))
+        if (other.CompareTag("Player") && PlayerMovement.action == PlayerMovement.Action.DASHING &&
+            Input.GetKey(KeyCode.Space))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RocksBreaks");
-            _boxCollider2D.enabled= false;
-            DestroyImmediate(_boxCollider2D);
+            _boxCollider2D.enabled = false;
+            DestroyImmediate(_boxCollider2D, true);
             _change.ChangeSprite();
+            
         }
-        
+
     }
 
 }
