@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _direction;
     private Vector2 _targetPos;
     private Animator _animator;
-    private const float DashRange = 2f;
+    private const float DashRange = 2.2f;
     [SerializeField] GameObject dashEffect;
     
     public enum State
@@ -78,68 +78,68 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-            if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
+        if (Input.GetKeyDown(KeyCode.Space)) // Makes the player DASH
+        {
+            _targetPos = Vector2.zero;
+            if (_stateDir == State.UP)
             {
-                _targetPos = Vector2.zero;
-                if (_stateDir == State.UP)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = 1;
-                }
-
-                if (_stateDir == State.DOWN)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = -1;
-                }
-
-                if (_stateDir == State.LEFT)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = -1;
-                }
-
-                if (_stateDir == State.RIGHT)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = 1;
-                }
-
-                if (_direction.x == 1 && _direction.y == 1)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = 1/Mathf.Sqrt(2);
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = 1/Mathf.Sqrt(2);
-                }
-
-                if (_direction.x == 1 && _direction.y == -1)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = -1/Mathf.Sqrt(2);
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = 1/Mathf.Sqrt(2);
-                }
-
-                if (_direction.x == -1 && _direction.y == 1)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = 1/Mathf.Sqrt(2);
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = -1/Mathf.Sqrt(2);
-                }
-
-                if (_direction.x == -1 && _direction.y == -1)
-                {
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.y = -1/Mathf.Sqrt(2);
-                    Instantiate(dashEffect, transform.position, Quaternion.identity);
-                    _targetPos.x = -1/Mathf.Sqrt(2);
-                }
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dash");
-                transform.Translate(_targetPos * DashRange);
-                action = Action.DASHING;
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = 1;
             }
+
+            if (_stateDir == State.DOWN)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = -1;
+            }
+
+            if (_stateDir == State.LEFT)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = -1;
+            }
+
+            if (_stateDir == State.RIGHT)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = 1;
+            }
+
+            if (_direction.x == 1 && _direction.y == 1)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = 1/Mathf.Sqrt(2);
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = 1/Mathf.Sqrt(2);
+            }
+
+            if (_direction.x == 1 && _direction.y == -1)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = -1/Mathf.Sqrt(2);
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = 1/Mathf.Sqrt(2);
+            }
+
+            if (_direction.x == -1 && _direction.y == 1)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = 1/Mathf.Sqrt(2);
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = -1/Mathf.Sqrt(2);
+            }
+
+            if (_direction.x == -1 && _direction.y == -1)
+            {
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.y = -1/Mathf.Sqrt(2);
+                Instantiate(dashEffect, transform.position, Quaternion.identity);
+                _targetPos.x = -1/Mathf.Sqrt(2);
+            }
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Dash");
+            transform.Translate(_targetPos * DashRange);
+            action = Action.DASHING;
+        }
         
     }
 

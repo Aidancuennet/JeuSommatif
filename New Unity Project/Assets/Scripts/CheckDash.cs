@@ -21,13 +21,14 @@ public class CheckDash : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision) //checks if above void
         {
+            if (collision.tag == "Ground")
+            {
+                _place = Place.GROUND;
+                
+            }
             if (collision.tag == "Void")
             {
                 _place = Place.VOID;
-            }
-            else
-            {
-                _place = Place.GROUND;
             }
         }
 }
