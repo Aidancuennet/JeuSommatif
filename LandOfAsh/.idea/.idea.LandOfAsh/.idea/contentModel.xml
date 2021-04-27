@@ -124,7 +124,6 @@
             </e>
           </e>
         </e>
-        <e p="SceneSwitch2.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Breaking.cs" t="Include" />
           <e p="Camera.cs" t="Include" />
@@ -137,6 +136,7 @@
           <e p="PlayerDies.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="SceneSwitch1.cs" t="Include" />
+          <e p="SceneSwitch2.cs" t="Include" />
           <e p="SceneSwitch3.cs" t="Include" />
           <e p="Sign.cs" t="Include" />
         </e>

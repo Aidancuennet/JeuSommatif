@@ -189,7 +189,7 @@ MonoBehaviour:
   Path: ../../FMOD Studio/LandOfAsh/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637550645111350752
+  lastModified: 637551668172506640
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -288,7 +288,7 @@ MonoBehaviour:
   - {fileID: -3458094391098966726}
   StringsBanks:
   - {fileID: 8458599620034230261}
-  stringsBankWriteTime: 637550645111370751
+  stringsBankWriteTime: 637551668172526642
   cacheVersion: 6
 --- !u!114 &1680923260918064690
 MonoBehaviour:
@@ -464,7 +464,7 @@ MonoBehaviour:
   Path: ../../FMOD Studio/LandOfAsh/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637550645111370751
+  lastModified: 637551668172526642
   LoadResult: 0
   FileSizes:
   - Name: Desktop
