@@ -393,8 +393,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../OneDrive/Desktop/Fmod/LandOfAsh/LandOfAsh.fspro
-  sourceBankPath: ..\..\OneDrive\Desktop\Fmod\LandOfAsh\Build
+  sourceProjectPath: ../../FMOD Studio/LandOfAsh/LandOfAsh.fspro
+  sourceBankPath: ..\..\FMOD Studio\LandOfAsh\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0

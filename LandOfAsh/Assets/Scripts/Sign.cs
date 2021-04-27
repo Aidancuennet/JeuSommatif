@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class Sign : MonoBehaviour
@@ -17,6 +16,6 @@ public class Sign : MonoBehaviour
 
     private void ShowText()
     {
-        Instantiate(SomeTextPrefab, transform.position, quaternion.identity, transform);
+        Instantiate(SomeTextPrefab, transform.position, Quaternion.identity, transform);
     }
 }
