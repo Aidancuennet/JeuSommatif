@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerDies : MonoBehaviour
 {
     private CheckDash _voided;
+    [SerializeField] private int Scene;
 
     private void Start()
     {
@@ -24,6 +23,6 @@ public class PlayerDies : MonoBehaviour
 
     void Dies()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Scene);
     }
 }
