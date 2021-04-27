@@ -23,7 +23,6 @@ public class Breaking : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RocksBreaks");
             _boxCollider2D.enabled = false;
-            DestroyImmediate(_boxCollider2D, true);
             _change.ChangeSprite();
             
         }

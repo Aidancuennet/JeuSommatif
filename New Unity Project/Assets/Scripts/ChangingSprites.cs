@@ -22,7 +22,6 @@ public class ChangingSprites : MonoBehaviour
         if (_spriteRenderer.sprite == sprite1) // if there is sprite 1 then go for sprite 2
         {
             _spriteRenderer.sprite = sprite2;
-            DestroyImmediate(sprite1);
         }
     }
 }
